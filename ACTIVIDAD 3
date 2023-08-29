@@ -1,1 +1,98 @@
+const estudiantes = [];
+const asignaturas = [];
+const calificaciones = [];
+
+const añadirEstudiante = (nombre) => {
+  estudiantes.push(nombre);
+  calificaciones.push([]);
+};
+
+const añadirAsignatura = (nombre) => {
+  asignaturas.push(nombre);
+};
+
+const añadirCalificaciones = (nombre, subject, calificacion) => {
+  let indexEstudiante = estudiantes.indexOf(nombre);
+  let indexAsignatura = asignaturas.indexOf(subject);
+
+  console.log(
+    `estudiante: ${indexEstudiante}  materia: ${indexAsignatura}`
+  );
+
+  if (indexEstudiante !== -1 && indexAsignatura !== -1) {
+    if (!calificaciones[indexEstudiante][indexAsignatura]) {
+      calificaciones[indexEstudiante][indexAsignatura] = [];
+    }
+    calificaciones[indexEstudiante][indexAsignatura].push(calificacion);
+  } else {
+    console.log("Estudiante o asignatura no encontrados.");
+  }
+};
+
+const printStudents = () => {
+  console.log("Lista  Alumnos");
+  for (let i = 0; i < estudiantes.length; i++) {
+    console.log(`Nombre: ${estudiantes[i]}`);
+  }
+};
+
+const printSchoolSubjects = () => {
+  console.log("Lista de Materias");
+  for (let i = 0; i < asignaturas.length; i++) {
+    console.log(`Materia: ${asignaturas[i]}`);
+  }
+};
+
+const printRatings = () => {
+  console.log("Calificaciones");
+  for (let a = 0; a < estudiantes.length; a++) {
+    for (let b = 0; b < asignaturas.length; b++) {
+      if (calificaciones[a][b]) {
+        console.log(
+          `Alumno: ${estudiantes[a]}, Materia: ${
+            asignaturas[b]
+          }, Calificaciones: ${calificaciones[a][b].join(", ")}`
+        );
+      }
+    }
+  }
+};
+
+const school = (actionInput, nombre, asignatura, calificacion) => {
+  console.log("A-Agregar Estudiantes");
+  console.log("B-Agregar Materias");
+  console.log("C-Agregar Calificaciones");
+
+  switch (actionInput) {
+    case "1":
+      añadirEstudiante(nombre);
+      break;
+    case "2":
+      añadirAsignatura(asignatura);
+      break;
+    case "3":
+      añadirCalificaciones(nombre, asignatura, calificacion);
+      break;
+    default:
+      console.log("Opción no válida, ingrese el número de la opción");
+  }
+};
+
+school("1", "", "Español", "");
+console.log("Se ha añadido un alumno");
+console.log("=====================================================");
+school("2", "", "Matematicas", "");
+console.log("Se ha añadido una materia");
+console.log("=====================================================");
+school("3", "Enrique", "Español", "9.5");
+console.log("Se ha añadido una calificación");
+console.log("=====================================================");
+school("4", "Enrique", "Español", "10.0");
+console.log("=====================================================");
+console.log("Se ha modificado una calificación");
+console.log("=====================================================");
+school("5", "Enrique", "Matemáticas", "10.0");
+console.log("=====================================================");
+console.log("Se ha modificado una calificación");
+console.log("=====================================================");
 
