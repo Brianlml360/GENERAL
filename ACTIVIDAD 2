@@ -1,1 +1,55 @@
+const contactos = [];
+const numeroTelefonico = [];
 
+const añadirContacto = (contacto, numeroTelefono) => {
+  contactos.push(contacto);
+  numeroTelefonico.push(numeroTelefono);
+};
+
+const editarContacto = (
+  contactoAntiguo,contactoNuevo,numeroTelefonoNuevo) => {
+  let index = contactos.indexOf(contactoAntiguo);
+  contactos[index] = contactoNuevo;
+  numeroTelefonico[index] = numeroTelefonoNuevo;
+};
+
+const eliminarContacto = (contacto) => {
+  let index = contactos.indexOf(contacto);
+  contactos.splice(index, 1);
+  numeroTelefonico.splice(index, 1);
+};
+
+const imprimirContactos = () => {
+  for (let i = 0; i < contactos.length; i++) {
+    console.log(`Nombre: ${contactos[i]}, Telefono: ${numeroTelefonico[i]}`);
+  }
+};
+
+const agenda = (actionInput, nombre, telefono) => {
+  console.log("Hola que tal");
+
+  switch (actionInput) {
+    case "1":
+      añadirContacto(nombre, telefono);
+      break;
+    case "2":
+      editarContacto(nombre, nuevoNombre, nuevoTelefono);
+      break;
+    case "3":
+      eliminarContacto(nombre);
+      break;
+    default:
+  }
+};
+
+agenda("1", "BRIAN", "9981019678");
+console.log("Se ha añadido un contacto a la agenda");
+imprimirContactos();
+console.log("*********************************************");
+agenda("1", "Irbing", "9981865680");
+console.log("Se ha añadido un contacto a la agenda");
+imprimirContactos();
+console.log("*********************************************");
+agenda("1", "Armando", "9981487166");
+console.log("Se ha añadido un contacto a la agenda");
+imprimirContactos();
