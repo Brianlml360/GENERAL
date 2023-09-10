@@ -1,0 +1,66 @@
+class bebidas {
+  constructor(
+    Tequila,
+    LecheEvaporada,
+    TripeSeco,
+    piña,
+    CremaCoco,
+    ZumoLimon,
+    Sal,
+    Azucar,
+    Hielo
+  ) {
+    this.Tequila = Tequila;
+    this.LecheEvaporada = LecheEvaporada;
+    this.TripeSeco = TripeSeco;
+    this.piña = piña;
+    this.CremaCoco = CremaCoco;
+    this.ZumoLimon = ZumoLimon;
+    this.Sal = Sal;
+    this.Azucar = Azucar;
+    this.Hielo = Hielo;
+
+    this.infoBebidas = `
+            Tu bebida contiene lo siguiente:
+            Tequila: ${this.Tequila},
+            Leche evaporada: ${this.LecheEvaporada},
+            Tripe Seco: ${this.TripeSeco},
+            Piña: ${this.piña},
+            Crema de coco: ${this.CremaCoco},
+            Zumo de limon: ${this.ZumoLimon},
+            Sal: ${this.sal},
+            Azucar: ${this.Azucar},
+            HIelo: ${this.Hielo},
+            `;
+  }
+  mostrarInfo() {
+    console.log(this.infoBebidas);
+  }
+}
+
+const Beb1 = new bebidas(
+  "60ml de tequila",
+  "No contiene",
+  "40ml triple seco",
+  "No contiene",
+  "No contiene",
+  "Zumo de limon",
+  "Sal",
+  "Azucar",
+  "HIelo",
+);
+
+const Beb2 = new bebidas(
+    "60ml de tequila",
+    "No contiene",
+    "40ml triple seco",
+    "No contiene",
+    "No contiene",
+    "Zumo de limon",
+    "Sal",
+    "Azucar",
+    "HIelo",
+);
+
+Beb1.mostrarInfo();
+Beb2.mostrarInfo();
