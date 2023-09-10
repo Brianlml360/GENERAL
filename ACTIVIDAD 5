@@ -1,1 +1,28 @@
 
+const biblioteca = {
+  libros: [],
+
+  añadir(nombre, autor, año) {
+    const nuevoLibro = { nombre, autor, año };
+    this.libros.push(nuevoLibro);
+    console.log(`Se añadio ${nombre} a la blibioteca`);
+  },
+
+  eliminar(nombre) {
+    const eliminarLibro = { nombre };
+    this.libros.pop(eliminarLibro);
+    console.log(`Se elimino ${nombre} de la biblioteca`);
+  },
+
+  editar(nombre, autor, año) {
+    const editarLibro = { nombre, autor, año };
+    this.libros.splice(editarLibro);
+    console.log(
+        `Se edito el nombre" ${nombre}" el autor "${autor}" e igualmente el año "${año}" de la biblioteca`
+    );
+  },
+};
+
+biblioteca.añadir("El principito", "Antoine de Saint-Exupery", 1900-1994);
+biblioteca.eliminar("El principito");
+biblioteca.editar("El principito", "Antoine de Saint-Exupery", 1994);
