@@ -1,0 +1,49 @@
+class Empleados {
+  constructor(ID, nombre, apellido, cargo, salario) {
+    this.ID = ID;
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.cargo = cargo;
+    this.salario = salario;
+
+    this.infoEmple = `
+            Datos generales del empleado:
+            ID: ${this.ID},
+            Nombre: ${this.nombre},
+            Apellido: ${this.apellido},
+            Cargo: ${this.cargo},
+            Salario: ${this.salario},
+            `;
+  }
+  mostrarInfo() {
+    console.log(this.infoEmple);
+  }
+}
+
+const Emple1 = new Empleados(
+  "002",
+  "Pedro",
+  "Juan",
+  "Seguridad",
+  "$ 6000 al mes"
+);
+
+const Emple2 = new Empleados(
+  "102",
+  "Lalo",
+  "Alberto",
+  "Supervisor",
+  "$ 5550 al mes"
+);
+
+const Emple3 = new Empleados(
+  "666",
+  "Pedro",
+  "Hernandez",
+  "Cajero",
+  "$ 6500 al mes"
+);
+
+Emple1.mostrarInfo();
+Emple2.mostrarInfo();
+Emple3.mostrarInfo();
