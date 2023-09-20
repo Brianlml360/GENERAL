@@ -1,0 +1,38 @@
+class Estudiante {
+  constructor(nombre, matricula) {
+    this.nombre = nombre;
+    this.matricula = matricula;
+    this.notas = [];
+  }
+
+
+  agregarNota(nota) {
+    this.notas.push(nota);
+  }
+
+
+obtenerPromedio() {
+  return this.notas.length === 0 ? "No hay notas registradas" : this.notas.reduce((acumulador, nota) => acumulador + nota, 0) / this.notas.length;
+}
+
+  mostrarDatos() {
+    console.log(this.nombre);
+    console.log(this.matricula);
+    console.log(this.notas.join(", "));
+    console.log(this.obtenerPromedio());
+  }
+}
+
+const estudiante1 = new Estudiante("Juan Perez", "2021001");
+const estudiante2 = new Estudiante("Maria Rodriguez", "2021002");
+
+
+estudiante1.agregarNota(85);
+estudiante1.agregarNota(90);
+estudiante2.agregarNota(78);
+estudiante2.agregarNota(92);
+
+
+estudiante1.mostrarDatos();
+console.log("----------------------");
+estudiante2.mostrarDatos();
