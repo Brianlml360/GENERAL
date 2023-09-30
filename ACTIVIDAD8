@@ -1,1 +1,38 @@
+class PilaLimitada {
+  constructor() {
+    this.Pila = [];
+  }
 
+  push(item) {
+    let limite = this.Pila.length;
+    if (limite < 3) {
+      this.Pila.push(item);
+      console.log(`Se añadio el elemento "${item}" a la pila`);
+    } else {
+      console.log(
+        `La pila se ecuentra llena, no se puede agregar otro elemento`
+      );
+      console.log(`Elimine un elemento para ingresar uno nuevo a la pila`);
+    }
+  }
+
+  pop() {
+    console.log(`Se ha eliminado el elemento: "${this.Pila.pop()}"`);
+  }
+
+  peek() {
+    console.log(
+      `El ultimo elemento de la pila es: "${this.Pila[this.Pila.length - 1]}"`
+    );
+  }
+}
+
+let miPila = new PilaLimitada();
+
+miPila.push("A");
+miPila.push("B");
+miPila.push("C");
+miPila.push("D");
+miPila.pop();
+miPila.push("D");
+miPila.peek();
